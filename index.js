@@ -87,17 +87,16 @@ return animalKind
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
 function filterByCountMinimum(animals, minimum) {
-  if (animals.length === 0) {
-    return [];
-}
-let minimumCount = animals[0];
+
+let minimumCount = [];
 for (i = 0; i < animals.length; i ++) {
     const animal = animals[i];
-if (animal.count < minimumCount.count) {
-    minimumCount = animal;
-    }
+    
+if (animal.count <= minimumCount) {
+  minimumCount.push(animal)
   }
-  return minimumCount;
+ }
+return minimumCount;
 }
 // console.log(filterByCountMinimum(animals, 5)); //> [
   //   { kind: "Pig", count: 5 },
