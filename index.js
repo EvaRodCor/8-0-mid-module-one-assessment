@@ -86,19 +86,22 @@ return animalKind
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
+
+
+/// not that it matters but I accidently submited the wrong file and I just realized,, I push it in 2 different files because my terminal was having issues I am so sorry.
 function filterByCountMinimum(animals, minimum) {
 
 let minimumCount = [];
-for (i = 0; i < animals.length; i ++) {
-    const animal = animals[i];
-    
-if (animal.count <= minimumCount) {
+
+for (let animal of animals) {
+if (animal.count >= minimum) {
   minimumCount.push(animal)
   }
  }
 return minimumCount;
 }
 // console.log(filterByCountMinimum(animals, 5)); //> [
+// console.log(filterByCountMinimum([], 3)); //> [] // returns empty array if input array is empty
   //   { kind: "Pig", count: 5 },
   //   { kind: "Cow", count: 7 },
   //   { kind: "Chicken", count: 11 },
